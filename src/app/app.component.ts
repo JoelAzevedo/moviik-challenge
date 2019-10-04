@@ -10,11 +10,17 @@ import { Quote } from './shared/quote';
 export class AppComponent implements OnInit {
 
   quotes: Quote[];
+  dummyQuotes: Array<object>;
 
   constructor(private quotesService: QuotesService) { }
 
   ngOnInit() {
-    this.loadQuotesByPage(1); // test for page 1
+    // this.loadQuotesByPage(1); // test for page 1
+
+    // Dummy quotes list
+    this.quotesService.getDummyQuotes().subscribe(data => {
+      this.dummyQuotes = data;
+    });
   }
 
   // Quotes list by page
@@ -24,4 +30,5 @@ export class AppComponent implements OnInit {
       this.quotes = data;
     });
   }
+
 }
