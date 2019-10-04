@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Quote } from 'src/app/system/quote';
 import { QuotesService } from 'src/app/system/services/quotes.service';
@@ -8,10 +8,11 @@ import { QuotesService } from 'src/app/system/services/quotes.service';
   templateUrl: './cards-list.component.html',
   styleUrls: ['./cards-list.component.scss']
 })
-export class CardsListComponent implements OnInit {
+export class CardsListComponent implements OnInit, OnDestroy {
 
   quotes: Quote[];
   // dummyQuotes: Array<object>;
+  private quotesServiceSubscription;
 
   constructor(private quotesService: QuotesService) { }
 
@@ -26,10 +27,13 @@ export class CardsListComponent implements OnInit {
 
   // Quotes list by page
   loadQuotesByPage(page: number) {
-    return this.quotesService.getQuotesByPage(page).subscribe((data) => {
-      // console.log(data);
+    this.quotesServiceSubscription = this.quotesService.getQuotesByPage(page).subscribe((data) => {
       this.quotes = data;
     });
+  }
+
+  ngOnDestroy() {
+    this.quotesServiceSubscription.unsubscribe();
   }
 
 }
