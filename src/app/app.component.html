@@ -1,7 +1,2 @@
-<router-outlet></router-outlet>
-
-<!-- Only for testing Start -->
-<blockquote *ngFor="let quote of quotes">
-  <span>{{ quote.en }}</span>
-</blockquote>
-<!-- Only for testing End -->
+<!-- <router-outlet></router-outlet> -->
+<moviik-quote *ngFor="let quote of quotes" [quote]="quote"></moviik-quote>
