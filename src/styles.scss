@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "app/system/styles/antialiasing";
+@import "app/system/styles/fonts";
+
+body {
+  background: rgb(231, 236, 237);
+  font-family: Abel, Arial, Verdana, sans-serif;
+}
