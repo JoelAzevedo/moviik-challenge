@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Quote } from 'src/app/shared/quote';
+import { Quote } from 'src/app/system/quote';
 
 @Component({
   selector: 'moviik-quote',
