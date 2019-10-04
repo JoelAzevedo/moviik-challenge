@@ -1,5 +1,25 @@
-blockquote {
-    border: 1px solid lightgrey;
-    border-radius: 8px;
-    padding: 8px;
+.card {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fff;
+  background: linear-gradient(#f8f8f8, #fff);
+  // color: #17e58f; // moviik color
+
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
+  border-radius: 6px;
+
+  &--header {
+    padding: 20px;
+    color: grey;
+  }
+
+  &--footer {
+    display: flex;
+    justify-content: space-between;
+    align-self: flex-end;
+    padding: 20px;
+
+    color: #232b2b;
+  }
 }
