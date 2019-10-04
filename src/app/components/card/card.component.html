@@ -1,5 +1,15 @@
-<blockquote>
-    <span>{{ quote.en }}</span>
-    <div>{{ quote.rating }}</div>
-    <strong>{{ quote.author }}</strong>
+<blockquote class="card">
+    <div class="card--header">
+        <em>
+            {{ quote.en }}
+        </em>
+    </div>
+    <div class="card--footer">
+        <span>
+            {{ quote.rating }}
+        </span>
+        <strong>
+            {{ quote.author }}
+        </strong>
+    </div>
 </blockquote>
