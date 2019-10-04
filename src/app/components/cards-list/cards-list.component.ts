@@ -4,14 +4,14 @@ import { Quote } from 'src/app/system/quote';
 import { QuotesService } from 'src/app/system/services/quotes.service';
 
 @Component({
-  selector: 'app-quotes-list',
-  templateUrl: './quotes-list.component.html',
-  styleUrls: ['./quotes-list.component.scss']
+  selector: 'moviik-cards-list',
+  templateUrl: './cards-list.component.html',
+  styleUrls: ['./cards-list.component.scss']
 })
-export class QuotesListComponent implements OnInit {
+export class CardsListComponent implements OnInit {
 
   quotes: Quote[];
-  dummyQuotes: Array<object>;
+  // dummyQuotes: Array<object>;
 
   constructor(private quotesService: QuotesService) { }
 

@@ -7,14 +7,14 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { QuotesService } from './system/services/quotes.service';
-import { QuoteComponent } from './components/quote/quote.component';
-import { QuotesListComponent } from './components/quotes-list/quotes-list.component';
+import { CardComponent } from './components/card/card.component';
+import { CardsListComponent } from './components/cards-list/cards-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuoteComponent,
-    QuotesListComponent
+    CardComponent,
+    CardsListComponent
   ],
   imports: [
     BrowserModule,
