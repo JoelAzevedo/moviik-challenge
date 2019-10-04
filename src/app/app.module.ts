@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { QuotesService } from './shared/quotes.service';
+import { QuoteComponent } from './components/quote/quote.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,
