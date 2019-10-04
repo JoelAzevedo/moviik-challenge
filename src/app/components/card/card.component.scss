@@ -20,11 +20,24 @@
 
   &--footer {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-self: flex-end;
-    align-items: center;
+    align-items: flex-end;
 
-    padding: 16px 20px 16px 0;
+    padding: 0 20px 16px 20px;
+
+    &-rating {
+      label {
+        width: 15px;
+        margin-right: 2px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        color: rgba(233, 54, 40, 0.2);
+      }
+    }
 
     &-author {
       color: #232b2b;
