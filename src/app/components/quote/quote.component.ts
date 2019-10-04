@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Quote } from 'src/app/shared/quote';
 
 @Component({
-  selector: 'app-quote',
+  selector: 'moviik-quote',
   templateUrl: './quote.component.html',
   styleUrls: ['./quote.component.scss']
 })
