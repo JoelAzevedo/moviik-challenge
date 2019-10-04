@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { QuotesService } from './shared/quotes.service';
 import { QuoteComponent } from './components/quote/quote.component';
+import { QuotesListComponent } from './components/quotes-list/quotes-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    QuoteComponent
+    QuoteComponent,
+    QuotesListComponent
   ],
   imports: [
     BrowserModule,
