@@ -1,8 +1,12 @@
 <div class="card-list-header">
     <h1>Programming Quotes</h1>
     <nav>
-        <button (click)="previousPage()" *ngIf="currentPage > 1">previous page</button>
-        <button (click)="nextPage()">next page</button>
+        <button (click)="previousPage()" *ngIf="currentPage > 1" title="previous page">
+            <i class="arrow left"></i>
+        </button>
+        <button (click)="nextPage()" title="next page">
+            <i class="arrow right"></i>
+        </button>
     </nav>
 </div>
 

@@ -1,3 +1,10 @@
+// Box shadow mixin to be used for animation
+@mixin boxShadow($color, $opacity) {
+  box-shadow: 0px 0px 0px 4px rgba($color, $opacity);
+  -webkit-box-shadow: 0px 0px 0px 4px rgba($color, $opacity);
+  -moz-box-shadow: 0px 0px 0px 4px rgba($color, $opacity);
+}
+
 .card-list-header {
   display: flex;
   flex-direction: column;
@@ -5,6 +12,47 @@
   h1 {
     font-family: "Oswald", sans-serif;
     letter-spacing: 2px;
+  }
+  nav {
+    button {
+      border: none;
+      background-color: #17e58f;
+      border-radius: 50%;
+      padding: 10px;
+      width: 35px;
+      margin: 0 5px;
+
+      cursor: pointer;
+
+      &:hover {
+        @include boxShadow(#17e58f, 0.2);
+        background-color: darken(#17e58f, 5%);
+        transition: 300ms cubic-bezier(0.4,0.0,0.2,1);
+      }
+
+      &:focus {
+        outline: 0;
+      }
+
+      i {
+        border: solid #fff;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+      }
+
+      .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        margin-right: 3px;
+      }
+
+      .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+        margin-right: -3px;
+      }
+    }
   }
 }
 
