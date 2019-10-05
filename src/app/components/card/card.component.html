@@ -7,18 +7,7 @@
         </blockquote>
     </div>
     <div class="card--footer">
-        <!-- <div>
-            {{ quote.rating }}
-        </div> -->
-
-        <div class="card--footer-rating">
-            <label>&#10084;</label>
-            <label>&#10084;</label>
-            <label>&#10084;</label>
-            <label>&#10084;</label>
-            <label>&#10084;</label>
-        </div>
-
+        <moviik-rating *ngIf="quote.rating" [score]="quote.rating"></moviik-rating>
         <div class="card--footer-author">
             {{ quote.author }}
         </div>
