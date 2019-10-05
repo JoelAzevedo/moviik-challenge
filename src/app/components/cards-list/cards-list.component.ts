@@ -10,13 +10,16 @@ import { QuotesService } from 'src/app/system/services/quotes.service';
 })
 export class CardsListComponent implements OnInit, OnDestroy {
 
-  quotes: Quote[];
   private quotesServiceSubscription;
+
+  quotes: Quote[];
+  currentPage: number;
 
   constructor(private quotesService: QuotesService) { }
 
   ngOnInit() {
-    this.loadQuotesByPage(1); // test for page 1
+    this.currentPage = 1; // by default we fetch all quotes from page one
+    this.loadQuotesByPage(this.currentPage);
   }
 
   // Quotes list by page
@@ -24,6 +27,20 @@ export class CardsListComponent implements OnInit, OnDestroy {
     this.quotesServiceSubscription = this.quotesService.getQuotesByPage(page).subscribe((data) => {
       this.quotes = data;
     });
+  }
+
+  nextPage() {
+    this.currentPage++;
+    this.loadQuotesByPage(this.currentPage);
+    console.log(this.currentPage);
+  }
+
+  previousPage() {
+    if (this.currentPage >= 1) {
+      this.currentPage--;
+      this.loadQuotesByPage(this.currentPage);
+      console.log(this.currentPage);
+    }
   }
 
   ngOnDestroy() {

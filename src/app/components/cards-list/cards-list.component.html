@@ -1,3 +1,6 @@
+<button *ngIf="currentPage > 1" (click)="previousPage()">previous page</button>
+<button (click)="nextPage()">next page</button>
+
 <div class="card-list-wrapper">
     <moviik-card *ngFor="let quote of quotes" [quote]="quote"></moviik-card>
 </div>
