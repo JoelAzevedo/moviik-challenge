@@ -1,5 +1,15 @@
-<blockquote>
-    <span>{{ quote.en }}</span>
-    <div>{{ quote.rating }}</div>
-    <strong>{{ quote.author }}</strong>
-</blockquote>
+<div class="card">
+    <div class="card--body">
+        <blockquote>
+            <em>
+                "{{ quote.en }}"
+            </em>
+        </blockquote>
+    </div>
+    <div class="card--footer">
+        <moviik-rating *ngIf="quote.rating" [score]="quote.rating" title="quote.rating"></moviik-rating>
+        <div class="card--footer-author">
+            {{ quote.author }}
+        </div>
+    </div>
+</div>

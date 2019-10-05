@@ -1,5 +1,47 @@
-blockquote {
-    border: 1px solid lightgrey;
-    border-radius: 8px;
-    padding: 8px;
+.card {
+  display: flex;
+  flex-direction: column;
+
+  border-radius: 6px;
+
+  background-color: #fff;
+  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.2);
+
+  &--body {
+    color: #414a4c;
+    font-size: 1.2em;
+    font-family: Abel, Arial, Verdana, sans-serif;
+
+    blockquote {
+      padding: 5px 15px;
+      border-left: 3px solid #17e58f;
+    }
+  }
+
+  &--footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    padding: 0 20px 16px 20px;
+
+    &-rating {
+      label {
+        width: 15px;
+        margin-right: 2px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        color: rgba(233, 54, 40, 0.2);
+      }
+    }
+
+    &-author {
+      color: #232b2b;
+      font-family: "Oswald", sans-serif;
+    }
+  }
 }
