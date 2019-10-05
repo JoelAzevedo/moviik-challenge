@@ -14,12 +14,14 @@ export class CardsListComponent implements OnInit, OnDestroy {
 
   quotes: Quote[];
   currentPage: number;
+  serviceErrors: string;
 
   // Interface text
   // This could/should be moved to a translation service
   titleText = 'Programming Quotes';
   nextPageText = 'Next page';
   previousPageText = 'Previous page';
+  errorText = 'And error occurred. Hover for details.';
 
   constructor(private quotesService: QuotesService) { }
 
@@ -32,20 +34,22 @@ export class CardsListComponent implements OnInit, OnDestroy {
   loadQuotesByPage(page: number) {
     this.quotesServiceSubscription = this.quotesService.getQuotesByPage(page).subscribe((data) => {
       this.quotes = data;
-    });
+    },
+      error => {
+        this.serviceErrors = error;
+      }
+    );
   }
 
   nextPage() {
     this.currentPage++;
     this.loadQuotesByPage(this.currentPage);
-    console.log(this.currentPage);
   }
 
   previousPage() {
     if (this.currentPage >= 1) {
       this.currentPage--;
       this.loadQuotesByPage(this.currentPage);
-      console.log(this.currentPage);
     }
   }
 

@@ -1,8 +1,9 @@
+<!-- Header with title and list navigation -->
 <div class="card-list-header">
     <h1>
         {{ titleText }}
     </h1>
-    <nav>
+    <nav *ngIf="!serviceErrors">
         <button (click)="previousPage()" *ngIf="currentPage > 1" title="{{ previousPageText }}">
             <i class="arrow left"></i>
         </button>
@@ -12,6 +13,14 @@
     </nav>
 </div>
 
-<div class="card-list-wrapper">
+<!-- Cards list wrapper + cards -->
+<div class="card-list-wrapper" *ngIf="!serviceErrors">
     <moviik-card *ngFor="let quote of quotes" [quote]="quote"></moviik-card>
 </div>
+
+<!-- Container of logs if API is unavailable -->
+<ng-container *ngIf="serviceErrors">
+    <div class="card-list-error-container" title="{{ serviceErrors }}">
+        {{ errorText }}
+    </div>
+</ng-container>

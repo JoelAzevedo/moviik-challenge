@@ -58,6 +58,19 @@
   }
 }
 
+.card-list-error-container {
+  background-color: $backgroundError;
+  color: $white;
+ 
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  
+  margin: auto;
+
+  max-width: 250px;
+  padding: 10px 0;
+}
+
 .card-list-wrapper {
   columns: 4 250px;
   -webkit-columns: 4 250px;
