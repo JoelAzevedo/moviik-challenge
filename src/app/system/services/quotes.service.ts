@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Observable, throwError } from 'rxjs';
+import { Observable, throwError, of } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 
 import { Quote } from '../quote';
@@ -11,6 +11,8 @@ import { Quote } from '../quote';
 })
 
 export class QuotesService {
+
+  public responseCache = new Map();
 
   // Base URL
   baseUrl = 'https://programming-quotes-api.herokuapp.com';
@@ -22,17 +24,23 @@ export class QuotesService {
     return this.http.get<Quote[]>(this.baseUrl + '/quotes')
       .pipe(
         retry(1),
-        tap(_ => console.log('fetched all quotes')),
         catchError(this.errorHandler)
       );
   }
 
-  // Get quotes by page
+  // Get quotes by page (cached)
   getQuotesByPage(page: number): Observable<Quote[]> {
-    return this.http.get<Quote[]>(this.baseUrl + '/quotes/page/' + page)
+    const quotesByPageUrl = this.baseUrl + '/quotes/page/' + page;
+    const quotesFromCache = this.responseCache.get(quotesByPageUrl);
+
+    if (quotesFromCache) {
+      return of(quotesFromCache);
+    }
+
+    return this.http.get<Quote[]>(quotesByPageUrl)
       .pipe(
         retry(1),
-        tap(_ => console.log('fetched quotes per page')),
+        tap(quotes => this.responseCache.set(quotesByPageUrl, quotes)),
         catchError(this.errorHandler)
       );
   }
@@ -42,7 +50,6 @@ export class QuotesService {
     return this.http.get<Quote>(this.baseUrl + '/quotes/random')
       .pipe(
         retry(1),
-        tap(_ => console.log('fetched a random quote')),
         catchError(this.errorHandler)
       );
   }
@@ -52,7 +59,7 @@ export class QuotesService {
     const url = `${this.baseUrl}/quotes/id/${id}`;
 
     return this.http.get<Quote>(url).pipe(
-      tap(_ => console.log(`fetched quote id=${id}`)),
+      retry(1),
       catchError(this.errorHandler)
     );
   }
