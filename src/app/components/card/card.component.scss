@@ -1,20 +1,21 @@
+@import "src/app/styles/colors";
+
 .card {
   display: flex;
   flex-direction: column;
 
   border-radius: 6px;
 
-  background-color: #fff;
-  box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  box-shadow: 0 8px 16px -8px $cardShadowColor;
 
   &--body {
-    color: #414a4c;
-    font-size: 1.2em;
-    font-family: Abel, Arial, Verdana, sans-serif;
-
     blockquote {
+      color: $quoteTextColor;
+      font-size: 1.2em;
+      font-family: Abel, Arial, Verdana, sans-serif;
       padding: 5px 15px;
-      border-left: 3px solid #17e58f;
+      border-left: 3px solid $moviikGreen;
     }
   }
 
@@ -26,21 +27,8 @@
 
     padding: 0 20px 16px 20px;
 
-    &-rating {
-      label {
-        width: 15px;
-        margin-right: 2px;
-
-        &:last-child {
-          margin-right: 0;
-        }
-
-        color: rgba(233, 54, 40, 0.2);
-      }
-    }
-
     &-author {
-      color: #232b2b;
+      color: $authorTextColor;
       font-family: "Oswald", sans-serif;
     }
   }

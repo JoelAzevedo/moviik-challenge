@@ -1,6 +1,8 @@
+@import "src/app/styles/colors";
+
 .rating {
   i {
-    color: rgba(242, 176, 30, 0.8);
+    color: $ratingColor;
     padding: 0 2px;
   }
 }
