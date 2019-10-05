@@ -59,8 +59,20 @@
 }
 
 .card-list-wrapper {
-  display: grid;
-  grid-gap: 40px;
-  margin: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  columns: 4 250px;
+  -webkit-columns: 4 250px;
+  -moz-columns: 4 250px;
+
+  column-gap: 20px;
+
+  margin: auto;
+  padding: 20px;
+  max-width: 1280px;
+
+  moviik-card {
+    /* Masonry bricks (child elements) */
+    display: inline-block;
+    margin: 0 0 20px;
+    width: 100%;
+  }
 }
