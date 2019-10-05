@@ -15,6 +15,12 @@ export class CardsListComponent implements OnInit, OnDestroy {
   quotes: Quote[];
   currentPage: number;
 
+  // Interface text
+  // This could/should be moved to a translation service
+  titleText = 'Programming Quotes';
+  nextPageText = 'Next page';
+  previousPageText = 'Previous page';
+
   constructor(private quotesService: QuotesService) { }
 
   ngOnInit() {
