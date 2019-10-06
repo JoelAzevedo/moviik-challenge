@@ -33,10 +33,10 @@
       }
 
       &:nth-child(2) {
-        background-color: darken($moviikGreen, 10%);
+        background-color: darken($moviikGreen, 7.5%);
         &:hover {
           box-shadow: unset;
-          background-color: darken($moviikGreen, 15%);
+          background-color: darken($moviikGreen, 10%);
         }
       }
 
