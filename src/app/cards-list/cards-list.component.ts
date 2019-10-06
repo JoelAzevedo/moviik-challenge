@@ -55,7 +55,7 @@ export class CardsListComponent implements OnInit, OnDestroy {
   }
 
   firstPage() {
-    this.currentPage = 1;
+    this.currentPage = 1; // Resets counter for page one
     this.loadQuotesByPage(this.currentPage);
   }
 
