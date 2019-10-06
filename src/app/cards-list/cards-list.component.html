@@ -7,6 +7,9 @@
         <button (click)="previousPage()" *ngIf="currentPage > 1" title="{{ previousPageText }}">
             <i class="arrow left"></i>
         </button>
+        <button (click)="firstPage()" *ngIf="currentPage > 1" title="{{ firstPageText }}">
+            <i class="fa fa-home"></i>
+        </button>
         <button (click)="nextPage()" title="{{ nextPageText }}">
             <i class="arrow right"></i>
         </button>
