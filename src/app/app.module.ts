@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { QuotesService } from './system/services/quotes.service';
 import { CardComponent } from './components/card/card.component';
-import { CardsListComponent } from './components/cards-list/cards-list.component';
+import { CardsListComponent } from './cards-list/cards-list.component';
 import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({

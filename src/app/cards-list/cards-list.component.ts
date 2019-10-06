@@ -21,7 +21,7 @@ export class CardsListComponent implements OnInit, OnDestroy {
   titleText = 'Programming Quotes';
   nextPageText = 'Next page';
   previousPageText = 'Previous page';
-  errorText = 'And error occurred. Hover for details.';
+  errorText = 'And error has occurred. Hover for details.';
 
   constructor(private quotesService: QuotesService) { }
 
