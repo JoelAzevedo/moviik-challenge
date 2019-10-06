@@ -23,7 +23,7 @@ describe('QuotesService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('getAllQuotes() should http GET quotes', () => {
+  it('getQuotesByPage(page) should http GET quotes for page 1', () => {
 
     const quotes = [
       {
@@ -42,11 +42,11 @@ describe('QuotesService', () => {
       }
     ];
 
-    quotesService.getAllQuotes().subscribe((res) => {
+    quotesService.getQuotesByPage(1).subscribe((res) => {
       expect(res).toEqual(quotes);
     });
 
-    const req = httpMock.expectOne('https://programming-quotes-api.herokuapp.com/quotes');
+    const req = httpMock.expectOne('https://programming-quotes-api.herokuapp.com/quotes/page/1');
     expect(req.request.method).toEqual('GET');
     req.flush(quotes);
 
