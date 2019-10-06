@@ -32,15 +32,27 @@
         transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
       }
 
+      &:nth-child(2) {
+        background-color: darken($moviikGreen, 7.5%);
+        &:hover {
+          box-shadow: unset;
+          background-color: darken($moviikGreen, 10%);
+        }
+      }
+
       &:focus {
         outline: 0;
       }
 
-      i {
+      .arrow {
         border: solid $white;
         border-width: 0 3px 3px 0;
         display: inline-block;
         padding: 3px;
+      }
+
+      .fa-home {
+        color: $white;
       }
 
       .right {
@@ -61,10 +73,10 @@
 .card-list-error-container {
   background-color: $backgroundError;
   color: $white;
- 
+
   font-family: "Oswald", sans-serif;
   text-align: center;
-  
+
   margin: auto;
 
   max-width: 250px;

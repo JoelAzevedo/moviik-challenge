@@ -21,6 +21,7 @@ export class CardsListComponent implements OnInit, OnDestroy {
   titleText = 'Programming Quotes';
   nextPageText = 'Next page';
   previousPageText = 'Previous page';
+  firstPageText = 'Back to first page';
   errorText = 'And error has occurred. Hover for details.';
 
   constructor(private quotesService: QuotesService) { }
@@ -51,6 +52,11 @@ export class CardsListComponent implements OnInit, OnDestroy {
       this.currentPage--;
       this.loadQuotesByPage(this.currentPage);
     }
+  }
+
+  firstPage() {
+    this.currentPage = 1; // Resets counter for page one
+    this.loadQuotesByPage(this.currentPage);
   }
 
   ngOnDestroy() {
