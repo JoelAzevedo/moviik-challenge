@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { trigger, style, transition, animate } from '@angular/animations';
 
 import { Quote } from 'src/app/system/quote';
 import { QuotesService } from 'src/app/system/services/quotes.service';
@@ -6,7 +7,15 @@ import { QuotesService } from 'src/app/system/services/quotes.service';
 @Component({
   selector: 'moviik-cards-list',
   templateUrl: './cards-list.component.html',
-  styleUrls: ['./cards-list.component.scss']
+  styleUrls: ['./cards-list.component.scss'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('366ms cubic-bezier(0.4,0.0,0.2,1)', style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class CardsListComponent implements OnInit, OnDestroy {
 

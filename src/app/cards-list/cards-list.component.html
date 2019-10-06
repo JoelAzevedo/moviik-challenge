@@ -1,5 +1,5 @@
 <!-- Header with title and list navigation -->
-<div class="card-list-header">
+<div [@fadeIn] class="card-list-header">
     <h1>
         {{ titleText }}
     </h1>
@@ -18,12 +18,12 @@
 
 <!-- Cards list wrapper + cards -->
 <div class="card-list-wrapper" *ngIf="!serviceErrors">
-    <moviik-card *ngFor="let quote of quotes" [quote]="quote"></moviik-card>
+    <moviik-card [@fadeIn] *ngFor="let quote of quotes" [quote]="quote"></moviik-card>
 </div>
 
 <!-- Container of logs if API is unavailable -->
 <ng-container *ngIf="serviceErrors">
-    <div class="card-list-error-container" title="{{ serviceErrors }}">
+    <div [@fadeIn] class="card-list-error-container" title="{{ serviceErrors }}">
         {{ errorText }}
     </div>
 </ng-container>
