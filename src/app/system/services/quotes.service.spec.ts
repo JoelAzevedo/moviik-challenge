@@ -23,7 +23,7 @@ describe('QuotesService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('getQuotesByPage(page) should http GET quotes for page 1', () => {
+  it('getQuotesByPage(1) should http GET quotes for page 1', () => {
 
     const quotes = [
       {
