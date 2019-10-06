@@ -1,12 +1,12 @@
 # MoviikChallenge
 
+![Preview of the interface](https://i.imgur.com/x0p4r6c.png)
+
 This interface contains a list of multiple cards, each one with a quote, a rating and an author. All the information is fetched from here: https://programming-quotes-api.herokuapp.com/.
 
-The card list forms a responsive masonry layout and the quotes can be navigated by page. A cache system was built to minimize the number of API calls.
+The card list forms a responsive masonry layout and the quotes can be navigated by page. A cache mechanism was built to minimize the number of API calls.
 
 The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.7.
-
-![Preview of the interface](https://i.imgur.com/x0p4r6c.png)
 
 ## Development server
 
