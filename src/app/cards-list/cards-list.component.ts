@@ -36,8 +36,7 @@ export class CardsListComponent implements OnInit, OnDestroy {
   constructor(private quotesService: QuotesService) { }
 
   ngOnInit() {
-    this.currentPage = 1; // by default we fetch all quotes from page one
-    this.loadQuotesByPage(this.currentPage);
+    this.firstPage(); // Loads page one at the beginning
   }
 
   // Quotes list by page
@@ -64,7 +63,7 @@ export class CardsListComponent implements OnInit, OnDestroy {
   }
 
   firstPage() {
-    this.currentPage = 1; // Resets counter for page one
+    this.currentPage = 1;
     this.loadQuotesByPage(this.currentPage);
   }
 
